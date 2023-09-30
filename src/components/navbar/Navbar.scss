@@ -1,0 +1,30 @@
+@import '../../styles/colors';
+
+.navbar {
+    background-color: $black;
+
+    &__nav-link {
+        color: $white;
+        font-family: Pridi, serif;
+        text-decoration: none;
+        font-size: 25px !important;
+    }
+
+    &__user-button {
+        color: $text-light;
+        font-family: Pridi, serif;
+        text-decoration: none;
+        font-size: 25px;
+        background: none;
+        padding: 0;
+        border: none;
+    }
+
+    &__avatar {
+        background: none !important;
+        border: 3px $text-light solid;
+        font-family: Pridi, serif;
+        color: $text-light !important;
+
+    }
+}

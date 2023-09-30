@@ -1,0 +1,16 @@
+@import '../../styles/colors';
+
+.footer {
+    margin: 0;
+    background: $black;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+    &__text {
+        padding: 5px;
+        color: $white;
+    }
+}

@@ -1,0 +1,14 @@
+@import '../../styles/colors';
+
+.sign-up {
+    background-image: linear-gradient(180deg, rgba(0, 0, 0, 1) 2%, rgba(0, 0, 0, 0) 100%),
+        url(https://img.freepik.com/free-photo/wineglass-with-red-smoky-liquid_23-2147905759.jpg?w=1380&t=st=1691178232~exp=1691178832~hmac=9d2d28547dd220f84515110bd26f1c09b054a47365aae3094fe2a76ba2eb79ff);
+    padding: 3rem;
+
+    &__form {
+        border: 3px solid $text-dark;
+        margin: auto;
+        padding: 2%;
+        background-color: rgba($color: #000000, $alpha: 0.5);
+    }
+}
