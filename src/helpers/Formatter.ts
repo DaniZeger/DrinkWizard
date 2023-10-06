@@ -17,10 +17,10 @@ export function renderHTMLContent(htmlString: string) {
     const elements = wrapper.querySelectorAll('img, p');
     elements.forEach((element) => {
         if (element.tagName === 'IMG') {
-            element.classList.add('post-image');
+            element.classList.add('post-page__post__image');
         }
         if (element.tagName === 'P') {
-            element.classList.add('custom-paragraph');
+            element.classList.add('post-page__post__text');
         }
     });
 

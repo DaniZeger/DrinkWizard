@@ -10,6 +10,11 @@ import LoginPage from './pages/login-page/LoginPage';
 import { ToastContainer } from 'react-toastify';
 import SignUpPage from './pages/signup-page/signUpPage';
 import AboutPage from './pages/about-page/AboutPage';
+import BlogPage from './pages/blog-page/BlogPage';
+import PostPage from './pages/blog-page/post-page/PostPage';
+import Error404 from './pages/404-page/Error404';
+import AddPostPage from './pages/blog-page/add-post-page/AddPostPage';
+import EditPostPage from './pages/blog-page/edit-post-page/EditePostPage';
 
 interface USER_CONTEXT {
   user: USER | undefined,
@@ -52,6 +57,12 @@ function App() {
           <Route path='/log-in' element={<LoginPage />} />
           <Route path='/sign-up' element={<SignUpPage />} />
           <Route path='/about' element={<AboutPage />} />
+          <Route path='/blog' element={<BlogPage />} />
+          <Route path="/blog/add" element={<AddPostPage />} />
+          <Route path="/post/:id" element={<PostPage />} />
+          <Route path='/post/:id/edit' element={<EditPostPage />} />
+
+          <Route path='/404' element={<Error404 />} />
         </Routes>
 
         <ScrollButton />

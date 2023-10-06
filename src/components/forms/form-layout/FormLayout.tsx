@@ -10,10 +10,9 @@ interface FormLayoutProps {
 function FormLayout({ children, onSubmit, onReset }: FormLayoutProps) {
     return (
         <form
-            // style={addDataForm}
             onSubmit={onSubmit}
             onReset={onReset}
-            className='form-layout w-50 m-auto my-5 p-3'>
+            className='form-layout'>
             {children}
         </form>
     );

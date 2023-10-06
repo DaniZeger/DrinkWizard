@@ -12,6 +12,6 @@ router.put('/:id', posts.editPost)
 router.delete('/:id', posts.deletePost)
 
 // http://localhost:8080/posts/:id/like-dislike
-router.put('/:id/like-dislike', posts.editLikes)
+router.put('/like-dislike/:id', posts.editLikes)
 
 module.exports = router;

@@ -1,0 +1,46 @@
+@import '../../../styles/colors';
+
+.post-page {
+    &__header {
+        padding-top: 3rem;
+        display: flex;
+        align-items: center;
+        width: 75%;
+        margin: auto;
+
+        &__title {
+            font-family: 'Pridi', serif;
+            font-size: 4rem;
+            color: $title-light;
+        }
+
+        &__text {
+            color: $text-light;
+        }
+
+        &__image {
+            border: 3px solid $title-dark;
+            padding: 1%;
+            margin-left: 5%;
+        }
+    }
+
+    &__post {
+        width: 75%;
+        margin: 3rem auto;
+
+        &__image {
+            width: 450px;
+            display: block;
+            margin: auto;
+
+            @media screen and (max-width: 700px) {
+                width: 250px;
+            }
+        }
+
+        &__text {
+            font-size: 20px;
+        }
+    }
+}

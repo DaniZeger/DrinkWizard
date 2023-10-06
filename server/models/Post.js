@@ -18,12 +18,9 @@ const PostSchema = new mongoose.Schema({
     },
     imageUrl: {
         type: String,
-        minlength: 2,
     },
     imageAlt: {
         type: String,
-        minlength: 2,
-        maxlength: 255
     },
     likes: {
         type: Number,

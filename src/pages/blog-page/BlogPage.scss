@@ -1,0 +1,17 @@
+@import '../../styles/colors';
+
+.blog-page {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    background: $black;
+    padding: 2%;
+
+    &__container {
+        border: $text-dark 3px solid;
+        width: fit-content;
+        height: fit-content;
+        padding: 1%;
+        margin: 1rem;
+    }
+}

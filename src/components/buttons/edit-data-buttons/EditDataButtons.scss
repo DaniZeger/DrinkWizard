@@ -1,0 +1,14 @@
+@import '../../../styles/buttons';
+@import '../../../styles/colors';
+
+.edit-data-buttons {
+    align-self: flex-start;
+    display: flex;
+    position: absolute;
+    right: 11vw;
+    top: 12vh;
+}
+
+.custom-button-fill {
+    margin: 0.5rem;
+}

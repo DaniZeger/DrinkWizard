@@ -1,10 +1,3 @@
-export function defaultImageAlt(alt: string) {
-    const imageAlt = 'No image'
-    if (alt != '') {
-        return alt
-    }
-    return imageAlt
-}
 export function defaultImageUrl(url: string) {
     const imageUrl = 'https://img.freepik.com/premium-vector/default-image-icon-vector-missing-picture-page-website-design-mobile-app-no-photo-available_87543-11093.jpg?w=996'
     if (url != '') {
