@@ -1,0 +1,42 @@
+@import '../../styles/colors';
+
+.about-page {
+    background: $black;
+    color: $white;
+
+    &__header {
+        display: flex;
+        width: 75%;
+        margin: auto;
+        align-items: center;
+        padding-bottom: 3rem;
+
+        &__title {
+            margin-top: 1rem;
+            text-align: center;
+        }
+
+        &__text {
+            font-family: 'Comfortaa', cursive;
+            font-size: 20px;
+        }
+    }
+
+    &__section {
+        background-position: center center;
+        background-image: linear-gradient(0deg, rgba(0, 0, 0, 1) 2%, rgba(13, 13, 13, 0.5) 50%, rgba(0, 0, 0, 1) 98%),
+            url(https://img.freepik.com/premium-photo/top-view-cocktail-essentials-with-shaker-ice-cubes_23-2148454417.jpg);
+        background-size: cover;
+        padding: 3% 2%;
+    }
+
+    &__footer {
+        background: $black;
+        color: $white;
+        font-family: 'Comfortaa', cursive;
+        padding-bottom: 3rem;
+        padding-top: 0.25rem;
+        margin: 0;
+        text-align: center;
+    }
+}

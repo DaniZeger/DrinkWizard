@@ -37,6 +37,7 @@ function Navbar() {
 
     function onLogOut() {
         user?.setUser(undefined)
+        setAnchorElUser(null)
         setDisName('')
         removeToken()
     }
@@ -121,7 +122,8 @@ function Navbar() {
                                     </NavLink>
                                 </Typography>
                             </MenuItem>
-                            <MenuItem sx={{ paddingBottom: 0, background: 'black' }} onClick={handleCloseNavMenu}>
+                            {/* <<<<< ADD IN CASE THERE IS TIME LEFT >>>>>> */}
+                            {/* <MenuItem sx={{ paddingBottom: 0, background: 'black' }} onClick={handleCloseNavMenu}>
                                 <Typography textAlign="center">
                                     <NavLink
                                         className="navbar__nav-link"
@@ -129,7 +131,7 @@ function Navbar() {
                                         Shop
                                     </NavLink>
                                 </Typography>
-                            </MenuItem>
+                            </MenuItem> */}
                         </Menu>
                     </Box>
 
@@ -193,7 +195,9 @@ function Navbar() {
                                 </NavLink>
                             </Typography>
                         </MenuItem>
-                        <MenuItem sx={{ marginTop: '20px', paddingBottom: 0 }} onClick={handleCloseNavMenu}>
+
+                        {/* <<<<< ADD IN CASE THERE IS TIME LEFT >>>>>> */}
+                        {/* <MenuItem sx={{ marginTop: '20px', paddingBottom: 0 }} onClick={handleCloseNavMenu}>
                             <Typography textAlign="center">
                                 <NavLink
                                     className="navbar__nav-link"
@@ -201,7 +205,7 @@ function Navbar() {
                                     Shop
                                 </NavLink>
                             </Typography>
-                        </MenuItem>
+                        </MenuItem> */}
 
                     </Box>
 

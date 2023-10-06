@@ -9,6 +9,7 @@ import ScrollButton from './components/buttons/scroll-button/ScrollButton';
 import LoginPage from './pages/login-page/LoginPage';
 import { ToastContainer } from 'react-toastify';
 import SignUpPage from './pages/signup-page/signUpPage';
+import AboutPage from './pages/about-page/AboutPage';
 
 interface USER_CONTEXT {
   user: USER | undefined,
@@ -47,9 +48,10 @@ function App() {
           theme="dark"
         />
         <Routes>
-          <Route path='/' element={<HomePage />}></Route>
-          <Route path='/log-in' element={<LoginPage />}></Route>
-          <Route path='/sign-up' element={<SignUpPage />}></Route>
+          <Route path='/' element={<HomePage />} />
+          <Route path='/log-in' element={<LoginPage />} />
+          <Route path='/sign-up' element={<SignUpPage />} />
+          <Route path='/about' element={<AboutPage />} />
         </Routes>
 
         <ScrollButton />

@@ -1,0 +1,22 @@
+@import '../../../styles/colors';
+
+.about-section {
+    border: 3px solid #D98841;
+    background: rgba(0, 0, 0, 0.7);
+    width: 70%;
+    color: $white;
+    display: flex;
+    align-Items: center;
+    padding: 3% 1%;
+    margin: 15px auto;
+
+    &__title {
+        font-size: 20px;
+    }
+
+    &__text {
+        font-family: 'Comfortaa', cursive;
+        font-weight: 900;
+        color: $text-light;
+    }
+}
