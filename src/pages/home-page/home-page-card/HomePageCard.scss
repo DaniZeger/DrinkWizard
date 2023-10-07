@@ -1,0 +1,24 @@
+@import '../../../styles/colors';
+@import '../../../styles/buttons';
+
+.home-page-card {
+    border: 2px solid $title-light;
+    border-radius: 15px;
+    width: 300px;
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+
+    &__title {
+        color: $text-lighter;
+        font-weight: normal;
+        font-size: 35px;
+        margin-left: 0.5rem;
+    }
+
+    &:hover {
+        background-color: $title-light;
+        cursor: pointer;
+    }
+
+}

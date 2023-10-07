@@ -2,7 +2,6 @@ import cocktailPic from '../../img/cocktail (1).png'
 import favIcon from '../../img/fav.png'
 import barDrawn from '../../img/bar100.png'
 import barTable from '../../img/barTable100.png'
-import barSupply from '../../img/supply.png'
 
 export const aboutPageSections = [
     {
@@ -13,8 +12,8 @@ export const aboutPageSections = [
         width: 150
     },
     {
-        title: "Save and Organize Your Favorites",
-        text: "Found a cocktail recipe that tickles your taste buds or bar you are dying to check? No worries, you can save it to your personal collection for easy access.With DrinkWizard, creating your custom library has never been simpler.Organize your favorites, mark recipes you want to try, and build your very own virtual bar.",
+        title: "Read some interesting article",
+        text: "Explore the fascinating world of mixology and discover the secrets behind crafting your favorite cocktails.From classic recipes to innovative concoctions, our articles are packed with tips, tricks, and historical insights that will elevate your bartending skills.Whether you're a seasoned bartender or a curious enthusiast, there's always something new to learn about the art of cocktail making.Cheers to a journey of taste and creativity!",
         imageSrc: favIcon,
         imageAlt: 'Icon of heart',
         width: 150
