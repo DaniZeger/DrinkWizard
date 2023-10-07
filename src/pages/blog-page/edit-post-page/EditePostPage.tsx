@@ -34,6 +34,12 @@ function EditPostPage() {
             .then(json => {
                 setPost(json)
             })
+            .catch(err => {
+                console.log(err.message);
+                if (err.response && err.response.status > 399) {
+                    navigation('/404')
+                }
+            })
     }, [])
 
     useEffect(() => {

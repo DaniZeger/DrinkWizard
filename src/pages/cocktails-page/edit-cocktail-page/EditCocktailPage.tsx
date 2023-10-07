@@ -41,7 +41,7 @@ function EditCocktailPage() {
             })
             .catch(err => {
                 console.log(err.message);
-                if (err.response && err.response.status === 404) {
+                if (err.response && err.response.status > 404) {
                     navigation('/404')
                 }
             })
