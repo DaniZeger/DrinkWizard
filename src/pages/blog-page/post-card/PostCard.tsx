@@ -22,7 +22,7 @@ function PostCard({ title, subtitle, imageUrl, imageAlt, date, id }: Props) {
         <div className="card rounded-0" style={{ maxWidth: "540px" }}>
             <div className="row g-0">
                 <div className="col-md-4">
-                    <img src={getDefaultImageUrl()} style={{ height: '100%' }} className="img-fluid" alt={imageAlt} />
+                    <img src={getDefaultImageUrl()} style={{ height: '100%' }} className="img-fluid" alt={imageAlt ? imageAlt : 'No image'} />
                 </div>
                 <div className="col-md-8">
                     <div className="card-body">

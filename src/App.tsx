@@ -15,6 +15,10 @@ import PostPage from './pages/blog-page/post-page/PostPage';
 import Error404 from './pages/404-page/Error404';
 import AddPostPage from './pages/blog-page/add-post-page/AddPostPage';
 import EditPostPage from './pages/blog-page/edit-post-page/EditePostPage';
+import CocktailsPage from './pages/cocktails-page/CocktailsPage';
+import CocktailPage from './pages/cocktails-page/cocktail-page/CocktailPage';
+import AddCocktailPage from './pages/cocktails-page/add-cocktail-page/AddCocktailPage';
+import EditCocktailPage from './pages/cocktails-page/edit-cocktail-page/EditCocktailPage';
 
 interface USER_CONTEXT {
   user: USER | undefined,
@@ -61,6 +65,10 @@ function App() {
           <Route path="/blog/add" element={<AddPostPage />} />
           <Route path="/post/:id" element={<PostPage />} />
           <Route path='/post/:id/edit' element={<EditPostPage />} />
+          <Route path='/cocktails' element={<CocktailsPage />} />
+          <Route path='/cocktails/add' element={<AddCocktailPage />} />
+          <Route path='/cocktail/:id' element={<CocktailPage />} />
+          <Route path='/cocktail/:id/edit' element={<EditCocktailPage />} />
 
           <Route path='/404' element={<Error404 />} />
         </Routes>

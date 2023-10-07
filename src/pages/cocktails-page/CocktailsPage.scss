@@ -1,0 +1,13 @@
+@import '../../styles/colors';
+
+.cocktails-page {
+    background: $black;
+    padding: 0 2% 2% 0;
+
+    &__container {
+        display: flex;
+        flex-wrap: wrap;
+        width: 75%;
+        margin: auto;
+    }
+}

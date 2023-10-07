@@ -1,0 +1,33 @@
+@import '../../../styles/colors';
+
+.cocktail-page {
+    width: 75%;
+    margin: 1.5rem auto;
+
+    &__header {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        &__image {
+            border: 3px solid $title-dark;
+            padding: 1%;
+            margin-left: 5%;
+        }
+
+        &__title {
+            font-family: 'Pridi', serif;
+            font-size: 4rem;
+            color: $title-light;
+        }
+    }
+
+    &__section {
+        display: flex;
+        justify-content: center;
+        align-items: stretch;
+        margin-top: 1.5rem;
+        padding: 1rem;
+    }
+
+}

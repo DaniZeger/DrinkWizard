@@ -1,0 +1,21 @@
+@import '../../../styles/colors';
+@import '../../../styles/buttons';
+
+.add-cocktail-page {
+    &__ingredients {
+        margin-left: 0.5rem;
+        margin-bottom: 1rem;
+        border: 1px solid $text-dark;
+
+        &__title {
+            text-decoration: underline;
+            margin: 0.5rem;
+        }
+
+        &__button {
+            margin: 0.5rem;
+            padding: 0 0.5rem;
+            align-self: flex-end;
+        }
+    }
+}

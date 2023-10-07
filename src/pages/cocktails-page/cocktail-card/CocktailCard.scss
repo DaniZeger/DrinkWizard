@@ -1,0 +1,21 @@
+@import '../../../styles/colors';
+
+.cocktail-card {
+    display: flex;
+    margin: 1rem;
+    width: 500px;
+    height: 150px;
+
+    &__content {
+        padding: 0.5rem;
+        background: $white;
+        font-size: 12px;
+    }
+
+    &__link {
+        cursor: pointer;
+        color: $title-dark;
+        text-decoration: underline;
+        font-weight: bold;
+    }
+}
