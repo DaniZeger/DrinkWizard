@@ -7,17 +7,20 @@ import { formatDate } from "../../../helpers/Formatter";
 import { COCKTAIL } from "../../../types/CocktailType";
 import EditDataButtons from "../../../components/buttons/edit-data-buttons/EditDataButtons";
 import './CocktailPage.scss'
+import { useDefaultImageUrl } from "../../../hooks/useDefaultImage";
 
 function CocktailPage() {
     const navigation = useNavigate()
     const { id } = useParams()
     const [cocktail, setCocktail] = useState<COCKTAIL>()
+    const { getDefaultImageUrl, setCustomImageUrl } = useDefaultImageUrl();
 
     useEffect(() => {
         if (!id) return
         cocktailsApi.getCocktailById(id)
             .then(json => {
                 setCocktail(json)
+                setCustomImageUrl(json.imageUrl as string)
             })
             .catch(err => {
                 console.log(err.message);
@@ -29,8 +32,6 @@ function CocktailPage() {
 
     function onDelete(id: string) {
         if (!id) return
-        console.log('click click');
-
         cocktailsApi.deleteCocktail(id)
             .then(() => {
                 toast.success('Cocktail data deleted successfully', {
@@ -53,8 +54,8 @@ function CocktailPage() {
                 <header className="cocktail-page__header">
                     <img
                         className="cocktail-page__header__image"
-                        src={cocktail?.imageUrl}
-                        alt={cocktail?.imageAlt}
+                        src={getDefaultImageUrl()}
+                        alt={cocktail?.imageAlt ? cocktail?.imageAlt : 'No Image'}
                         width={350}
                     />
                     <div className="ms-3">

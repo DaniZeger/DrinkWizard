@@ -1,0 +1,44 @@
+@import '../../../styles/colors';
+@import '../../../styles/buttons';
+
+.add-reservation {
+    padding-bottom: 3rem;
+    background: $black;
+
+    &__details {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        color: $text-lighter;
+    }
+
+    &__area {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0.5rem;
+
+        &__label {
+            color: $text-lighter;
+            margin: 0.5rem;
+        }
+    }
+
+    &__submitted {
+        display: flex;
+        flex-direction: column;
+        margin: auto;
+        width: 50%;
+        text-align: center;
+
+        &__title {
+            color: $title-light;
+            text-align: center;
+        }
+
+        &__button {
+            width: 25%;
+            margin: 1.5rem auto;
+        }
+    }
+}

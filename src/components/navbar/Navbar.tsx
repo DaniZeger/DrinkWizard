@@ -122,16 +122,6 @@ function Navbar() {
                                     </NavLink>
                                 </Typography>
                             </MenuItem>
-                            {/* <<<<< ADD IN CASE THERE IS TIME LEFT >>>>>> */}
-                            {/* <MenuItem sx={{ paddingBottom: 0, background: 'black' }} onClick={handleCloseNavMenu}>
-                                <Typography textAlign="center">
-                                    <NavLink
-                                        className="navbar__nav-link"
-                                        to='/shop'>
-                                        Shop
-                                    </NavLink>
-                                </Typography>
-                            </MenuItem> */}
                         </Menu>
                     </Box>
 
@@ -195,35 +185,10 @@ function Navbar() {
                                 </NavLink>
                             </Typography>
                         </MenuItem>
-
-                        {/* <<<<< ADD IN CASE THERE IS TIME LEFT >>>>>> */}
-                        {/* <MenuItem sx={{ marginTop: '20px', paddingBottom: 0 }} onClick={handleCloseNavMenu}>
-                            <Typography textAlign="center">
-                                <NavLink
-                                    className="navbar__nav-link"
-                                    to='/shop'>
-                                    Shop
-                                </NavLink>
-                            </Typography>
-                        </MenuItem> */}
-
                     </Box>
 
                     <Box sx={{ flexGrow: 0 }}>
                         <div className="d-flex">
-                            <h2 className="mt-2 me-4">
-                                <NavLink to='/' style={{ color: "#D9AE89" }}>
-                                    <i className="bi bi-cart4"></i>
-                                </NavLink>
-                            </h2>
-                            {
-                                user?.user &&
-                                <h2 className="mt-2 me-4">
-                                    <NavLink to='/' style={{ color: "#D9AE89" }}>
-                                        <i className="bi bi-heart-fill"></i>
-                                    </NavLink>
-                                </h2>
-                            }
                             {
                                 !user?.user &&
                                 <>

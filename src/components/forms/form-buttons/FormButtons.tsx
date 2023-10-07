@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import './FormButtons.scss'
+import '../../../styles/_buttons.scss'
 
 interface FormsButtonsProps {
     textAction: string

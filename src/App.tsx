@@ -19,6 +19,11 @@ import CocktailsPage from './pages/cocktails-page/CocktailsPage';
 import CocktailPage from './pages/cocktails-page/cocktail-page/CocktailPage';
 import AddCocktailPage from './pages/cocktails-page/add-cocktail-page/AddCocktailPage';
 import EditCocktailPage from './pages/cocktails-page/edit-cocktail-page/EditCocktailPage';
+import BarsPage from './pages/bars-page/BarsPage';
+import BarPage from './pages/bars-page/bar-page/BarPage';
+import AddReservationPage from './pages/bars-page/add-reservation-page/AddReservationPage';
+import AddBarPage from './pages/bars-page/add-bar-page/Add BarPage';
+import EditBarPage from './pages/bars-page/edit-bar-page/EditBarPage';
 
 interface USER_CONTEXT {
   user: USER | undefined,
@@ -69,6 +74,11 @@ function App() {
           <Route path='/cocktails/add' element={<AddCocktailPage />} />
           <Route path='/cocktail/:id' element={<CocktailPage />} />
           <Route path='/cocktail/:id/edit' element={<EditCocktailPage />} />
+          <Route path='/bars' element={<BarsPage />} />
+          <Route path='/bars/add' element={<AddBarPage />} />
+          <Route path='/bar/:id' element={<BarPage />} />
+          <Route path='/bar/:id/edit' element={<EditBarPage />} />
+          <Route path='/reservations/add' element={<AddReservationPage />} />
 
           <Route path='/404' element={<Error404 />} />
         </Routes>

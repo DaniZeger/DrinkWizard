@@ -1,0 +1,9 @@
+.bars-page {
+    &__section {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        background: black;
+        padding: 0 2% 2% 0;
+    }
+}

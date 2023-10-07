@@ -12,6 +12,6 @@ router.put('/:id', bars.editBar)
 router.delete('/:id', bars.deleteBar)
 
 // http://localhost:8080/bars/:id/rate
-router.post('/:id/rate', bars.rateBar)
+router.post('/rate/:id', bars.rateBar)
 
 module.exports = router;
