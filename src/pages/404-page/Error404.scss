@@ -1,0 +1,21 @@
+@import '../../styles/colors';
+
+.error-page {
+    height: 86.5vh;
+    background: black;
+
+    &__image {
+        display: flex;
+        justify-content: center;
+        padding-top: 3rem;
+    }
+
+    &__title {
+        text-align: center;
+        width: 75%;
+        margin: auto;
+        font-family: 'Pridi', serif;
+        font-size: 4rem;
+        color: $title-light;
+    }
+}
