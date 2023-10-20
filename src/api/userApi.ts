@@ -1,12 +1,15 @@
 import axios from "axios"
 import { USER } from "../types/UserType"
-import { getAll, postData } from "./api"
+import { deleteData, getAll, getOne, postData, putData } from "./api"
 import { URL, contentType } from "./apiHeaders"
 
 const endpoint = 'users'
 
 export const userApi = {
     getUsers: () => getAll<USER>(endpoint),
+    getUserById: (id: string) => getOne<USER>(id, endpoint),
+    deleteUser: (id: string) => deleteData<USER>(id, endpoint),
+    editUser: (id: string, user: USER) => putData(id, user, endpoint),
 
     logIn: (user: USER) => postData<USER>(user, `${endpoint}/log-in`),
 

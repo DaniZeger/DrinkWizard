@@ -1,5 +1,5 @@
-import { useContext, useState } from "react"
-import { useNavigate } from "react-router-dom"
+import { useContext, useEffect, useState } from "react"
+import { useNavigate, useParams } from "react-router-dom"
 import useWindowWidth from "../../hooks/useWindowWidth"
 import { USER } from "../../types/UserType"
 import FormsButtons from "../../components/forms/form-buttons/FormButtons"
@@ -9,9 +9,9 @@ import MainHeader from "../../components/main-header/MainHeader"
 import CountryCodeSelect from "../../components/forms/country-code-select/CountryCodeSelcet"
 import { toast } from "react-toastify"
 import { formsLengthValidate, formsMailValidate, formsPasswordValidate } from "../../helpers/Validateion"
-import './signUpPage.scss'
 import { userApi } from "../../api/userApi"
 import { userContext } from "../../App"
+
 
 const bgImage = "https://img.freepik.com/free-photo/cocktail-celebration-martini-lemon-lime-whiskey-tequila-generative-ai_188544-12371.jpg?w=1380&t=st=1691166384~exp=1691166984~hmac=aa0d6b199dcad4f628c1ec1ac4710ab3c6fb2d70a9166da8265a84c891b586cf"
 
@@ -21,10 +21,12 @@ const headerProps = {
     bgPosition: 'center'
 }
 
-function SignUpPage() {
+function EditUserPage() {
+    const { id } = useParams()
     const context = useContext(userContext)
     const navigation = useNavigate()
     const width = useWindowWidth()
+    const [user, setUser] = useState<USER>()
     const [firstName, setFirstName] = useState("")
     const [firstNameError, setFirstNameError] = useState("")
     const [lastName, setLastName] = useState("")
@@ -35,9 +37,31 @@ function SignUpPage() {
     const [phone, setPhone] = useState('')
     const [address, setAddress] = useState('')
     const [password, setPassword] = useState('')
-    const [passwordError, setPasswordError] = useState('')
     const [message, setMessage] = useState('')
     const [isAdmin, setIsAdmin] = useState(false)
+
+    useEffect(() => {
+        if (!id) return
+        userApi.getUserById(id)
+            .then(json => setUser(json))
+            .catch(err => {
+                console.log(err.message);
+                if (err.response && err.response.status > 399) {
+                    navigation('/404')
+                }
+            })
+    }, [])
+
+    useEffect(() => {
+        setFirstName(user?.firstName as string)
+        setLastName(user?.lastName as string)
+        setEmail(user?.email as string)
+        setCountryCode(user?.country_code as string)
+        setPhone(user?.phone as string)
+        setAddress(user?.address as string)
+        setPassword(user?.password as string)
+        setIsAdmin(user?.isAdmin ? user.isAdmin : false)
+    }, [user])
 
 
     const newUser: USER = {
@@ -52,9 +76,9 @@ function SignUpPage() {
     }
 
 
-    function onSignUp(e: React.FormEvent<HTMLFormElement>): void {
+    function onEdit(e: React.FormEvent<HTMLFormElement>): void {
         e.preventDefault()
-        if (!formsLengthValidate(firstName) || !formsLengthValidate(lastName) || !formsMailValidate(email) || !formsPasswordValidate(password)) {
+        if (!formsLengthValidate(firstName) || !formsLengthValidate(lastName) || !formsMailValidate(email)) {
             if (!formsLengthValidate(firstName)) {
                 setFirstNameError('First name must be longer then 2 characters')
             }
@@ -64,23 +88,20 @@ function SignUpPage() {
             if (!formsMailValidate(email)) {
                 setEmailError('Please enter a validate email')
             }
-            if (!formsPasswordValidate(password)) {
-                setPasswordError('Password must be between 8 to 15 characters')
-            }
             return
         }
 
         setFirstNameError('')
         setLastNameError('')
         setEmailError('')
-        setPasswordError('')
 
-        userApi.signUp(newUser)
+        if (!id) return
+        userApi.editUser(id, newUser)
             .then(() => {
-                toast.success('User registered successfully', {
+                toast.success('User updated successfully', {
                     onClose: () => {
                         setTimeout(() => {
-                            navigation('/log-in')
+                            navigation('/admin')
                         }, 3000)
                     }
                 })
@@ -101,16 +122,17 @@ function SignUpPage() {
         setAddress('')
         setPassword('')
     }
+
     return (
         <>
             <MainHeader
                 background={headerProps}
-                title="Sign Up"
+                title="Edit User"
             />
             <section className="sign-up">
                 <form
                     onReset={handleReset}
-                    onSubmit={onSignUp}
+                    onSubmit={onEdit}
                     className="sign-up__form"
                     style={{ width: width > 700 ? '40%' : '97%' }}
                 >
@@ -175,11 +197,6 @@ function SignUpPage() {
                         onChange={(e) => setAddress(e.target.value)}
                         width="97%"
                     />
-                    <PasswordInput
-                        value={password}
-                        setValue={setPassword}
-                        error={passwordError}
-                    />
 
                     {
                         context.user && context.user.isAdmin &&
@@ -199,8 +216,8 @@ function SignUpPage() {
                     }
 
                     <FormsButtons
-                        cancelTarget="/"
-                        textAction="Sign Up"
+                        cancelTarget="/admin"
+                        textAction="Save Changes"
                     />
                 </form>
 
@@ -209,4 +226,4 @@ function SignUpPage() {
     );
 }
 
-export default SignUpPage;
+export default EditUserPage;

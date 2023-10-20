@@ -25,6 +25,8 @@ import AddBarPage from './pages/bars-page/add-bar-page/Add BarPage';
 import EditBarPage from './pages/bars-page/edit-bar-page/EditBarPage';
 import './App.scss';
 import AdminPage from './pages/admin-page/AdminPage';
+import EditUserPage from './pages/edit-user-page/EditUserPage';
+import AdminGuard from './helpers/AdminGuard';
 
 interface USER_CONTEXT {
   user: USER | undefined,
@@ -66,22 +68,22 @@ function App() {
           <Route path='/' element={<HomePage />} />
           <Route path='/log-in' element={<LoginPage />} />
           <Route path='/sign-up' element={<SignUpPage />} />
+          <Route path='/user/:id/edit' element={<AdminGuard> <EditUserPage /> </AdminGuard>} />
           <Route path='/about' element={<AboutPage />} />
           <Route path='/blog' element={<BlogPage />} />
-          <Route path="/blog/add" element={<AddPostPage />} />
+          <Route path="/blog/add" element={<AdminGuard><AddPostPage /> </AdminGuard>} />
           <Route path="/post/:id" element={<PostPage />} />
-          <Route path='/post/:id/edit' element={<EditPostPage />} />
+          <Route path='/post/:id/edit' element={<AdminGuard><EditPostPage /> </AdminGuard>} />
           <Route path='/cocktails' element={<CocktailsPage />} />
-          <Route path='/cocktails/add' element={<AddCocktailPage />} />
+          <Route path='/cocktails/add' element={<AdminGuard><AddCocktailPage /> </AdminGuard>} />
           <Route path='/cocktail/:id' element={<CocktailPage />} />
-          <Route path='/cocktail/:id/edit' element={<EditCocktailPage />} />
+          <Route path='/cocktail/:id/edit' element={<AdminGuard><EditCocktailPage /> </AdminGuard>} />
           <Route path='/bars' element={<BarsPage />} />
-          <Route path='/bars/add' element={<AddBarPage />} />
+          <Route path='/bars/add' element={<AdminGuard><AddBarPage /> </AdminGuard>} />
           <Route path='/bar/:id' element={<BarPage />} />
-          <Route path='/bar/:id/edit' element={<EditBarPage />} />
+          <Route path='/bar/:id/edit' element={<AdminGuard><EditBarPage /> </AdminGuard>} />
           <Route path='/reservations/add/:barName' element={<AddReservationPage />} />
-          <Route path='/admin' element={<AdminPage />} />
-
+          <Route path='/admin' element={<AdminGuard> <AdminPage /> </AdminGuard>} />
           <Route path='/404' element={<Error404 />} />
         </Routes>
 

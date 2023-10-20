@@ -5,6 +5,11 @@ const users = require('../controllers/Users')
 // http://localhost:8080/users/
 router.get('/', users.getAll)
 
+// http://localhost:8080/users/:id
+router.get('/:id', users.getOne)
+router.put('/:id', users.editUser)
+router.delete('/:id', users.deleteUser)
+
 // http://localhost:8080/users/sign-up
 router.post('/sign-up', users.signUp)
 

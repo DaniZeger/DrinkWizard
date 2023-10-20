@@ -3,6 +3,7 @@ import PostsSection from "./posts-section/PostsSections";
 import './AdminPage.scss'
 import CocktailsSection from "./cocktails-section/CocktailsSection";
 import BarSection from "./bars-section/BarsSection";
+import UsersSection from "./users-section/UsersSection";
 
 export interface Collections {
     name: string,
@@ -38,6 +39,7 @@ function AdminPage() {
                         <PostsSection />
                         <CocktailsSection />
                         <BarSection />
+                        <UsersSection />
                     </div>
 
                 </div>

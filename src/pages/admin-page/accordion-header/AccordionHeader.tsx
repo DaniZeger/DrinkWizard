@@ -9,6 +9,7 @@ interface AccordionHeaderProps {
 }
 
 function AccordionHeader({ collectionName, handleOpen, isOpen, collectionLength }: AccordionHeaderProps) {
+
     return (
         <ul className="accordion-header">
             <li
@@ -24,6 +25,7 @@ function AccordionHeader({ collectionName, handleOpen, isOpen, collectionLength 
                     isAdminPage
                     action="Add Data"
                     target={collectionName === 'Posts' ? 'blog' : collectionName.toLowerCase()}
+                    addUser={collectionName === 'Users' ? true : false}
                 />
             </li>
         </ul>

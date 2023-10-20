@@ -17,6 +17,98 @@ module.exports = {
         }
     },
 
+    getOne: async function (req, res, next) {
+        try {
+            const scheme = joi.object({
+                _id: joi.string().required(),
+            });
+
+            const { error, value } = scheme.validate({ _id: req.params.id });
+
+            if (error) {
+                console.log(error.details[0].message);
+                res.status(400).json({ error: "invalid data" });
+                return;
+            }
+
+            const result = await UserModel.findOne({ _id: value._id });
+
+            if (!result) {
+                res.status(404).json({ error: "user not found" });
+                return;
+            }
+            res.json(result);
+
+        }
+        catch (err) {
+            console.log(err);
+            res.status(400).json({ error: "error get the post" });
+        }
+    },
+
+    editUser: async function (req, res, next) {
+        try {
+            const schema = joi.object({
+                firstName: joi.string().required().min(2),
+                lastName: joi.string().required().min(2),
+                email: joi.string().email().required(),
+                country_code: joi.string().allow(null, ''),
+                phone: joi.string().allow(null, ''),
+                address: joi.string().allow(null, ''),
+                isAdmin: joi.boolean(),
+                password: joi.string().min(6).max(255).required(),
+            })
+
+            const { error, value } = schema.validate(req.body);
+
+            if (error) {
+                console.log(error.details[0].message);
+                res.status(400).json({ error: "invalid data" });
+                return;
+            }
+
+            const user = await UserModel.findOneAndUpdate({
+                _id: req.params.id
+            }, value)
+
+            if (!user) res.status(404).send('Given ID was not found.')
+
+            const updated = await UserModel.findOne({ _id: req.params.id })
+            res.json(updated)
+
+        } catch (err) {
+            console.log(err);
+            res.status(400).json({ error: "error edit user" });
+        }
+
+
+    },
+
+    deleteUser: async function (req, res, next) {
+        try {
+            const scheme = joi.object({
+                _id: joi.string().required(),
+            });
+
+            const { error, value } = scheme.validate({ _id: req.params.id });
+
+            if (error) {
+                console.log(error.details[0].message);
+                res.status(400).json({ error: "invalid data" });
+                return;
+            }
+
+            const deleted = await UserModel.findOne({ _id: value._id });
+
+            await UserModel.deleteOne(value).exec();
+            res.json(deleted);
+        }
+        catch (err) {
+            console.log(err);
+            res.status(400).json({ error: "error delete user" });
+        }
+    },
+
     login: async function (req, res, next) {
 
         const schema = joi.object({
