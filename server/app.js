@@ -11,6 +11,7 @@ var likesRouter = require('./routes/Liked')
 var barsRouter = require('./routes/Bars')
 var reservationsRouter = require('./routes/Reservations')
 var cocktailsRouter = require('./routes/Cocktails')
+var initRouter = require('./routes/Init')
 
 const headers = require('./middleware/headers');
 
@@ -24,6 +25,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(headers);
 app.use('/', indexRouter);
+app.use('/init', initRouter)
 app.use('/users', usersRouter);
 app.use('/posts', postsRouter)
 app.use('/bars', barsRouter)
