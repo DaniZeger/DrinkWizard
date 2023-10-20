@@ -82,7 +82,7 @@ function AddPostPage() {
     return (
         <>
             <MainHeader
-                title="Add Post."
+                title="Add Post"
                 background={headerProps}
             />
 

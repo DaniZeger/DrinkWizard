@@ -1,0 +1,28 @@
+@import '../../../styles/colors';
+
+.accordion-item {
+    &__header {
+        display: flex;
+        font-size: 15px;
+        list-style: none;
+        justify-content: space-between;
+        border-bottom: 1px solid $text-dark;
+        padding-bottom: 0.5rem;
+        padding-top: 0.5rem;
+    }
+
+    &__scroll {
+        height: 250px;
+        overflow-y: scroll;
+        overflow-x: hidden;
+    }
+
+    &__table {
+        display: flex;
+        font-size: 15px;
+        list-style: none;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+}

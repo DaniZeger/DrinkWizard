@@ -6,21 +6,28 @@ import './AddDataButton.scss'
 interface AddDataButtonProps {
     target: string
     action: string
+    addUser?: boolean
+    isAdminPage?: boolean
 }
 
-function AddDataButton({ target, action }: AddDataButtonProps) {
+function AddDataButton({
+    target,
+    action,
+    addUser,
+    isAdminPage
+}: AddDataButtonProps) {
     const context = useContext(userContext)
     const navigation = useNavigate()
 
     function onNavigate() {
-        navigation(`/${target}/add`)
+        navigation(!addUser ? `/${target}/add` : '/sign-up')
     }
 
     return (
         <>
             {
                 context?.user?.isAdmin &&
-                <div className="add-data-warper">
+                <div className={`add-data-warper${isAdminPage ? '--admin' : ''}`}>
                     <button
                         onClick={onNavigate}
                         className="btn custom-button-outline"

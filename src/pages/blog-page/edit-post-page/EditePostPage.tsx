@@ -101,7 +101,7 @@ function EditPostPage() {
     return (
         <>
             <MainHeader
-                title="Edit Post."
+                title="Edit Post"
                 background={headerProps}
             />
 

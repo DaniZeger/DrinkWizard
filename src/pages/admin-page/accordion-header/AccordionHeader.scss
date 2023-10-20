@@ -1,0 +1,8 @@
+@import '../../../styles/colors';
+
+.accordion-header {
+    display: flex;
+    list-style: none;
+    padding: 0.5rem 1rem;
+    background: $title-dark;
+}

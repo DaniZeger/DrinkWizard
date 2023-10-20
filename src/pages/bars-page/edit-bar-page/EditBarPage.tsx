@@ -152,7 +152,7 @@ function EditBarPage() {
     return (
         <>
             <MainHeader
-                title="Edit Bar."
+                title="Edit Bar"
                 background={headerProps}
             />
 

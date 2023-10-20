@@ -29,7 +29,7 @@ function BarsPage() {
     return (
         <>
             <MainHeader
-                title="Bars."
+                title="Bars"
                 background={headerProps}
             />
             <AddDataButton target="bars" action="Add Bar" />

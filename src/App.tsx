@@ -1,5 +1,4 @@
 import React, { Dispatch, SetStateAction, createContext, useMemo, useState } from 'react';
-import './App.scss';
 import { USER } from './types/UserType';
 import Navbar from './components/navbar/Navbar';
 import { Route, Routes } from 'react-router-dom';
@@ -24,6 +23,8 @@ import BarPage from './pages/bars-page/bar-page/BarPage';
 import AddReservationPage from './pages/bars-page/add-reservation-page/AddReservationPage';
 import AddBarPage from './pages/bars-page/add-bar-page/Add BarPage';
 import EditBarPage from './pages/bars-page/edit-bar-page/EditBarPage';
+import './App.scss';
+import AdminPage from './pages/admin-page/AdminPage';
 
 interface USER_CONTEXT {
   user: USER | undefined,
@@ -78,7 +79,8 @@ function App() {
           <Route path='/bars/add' element={<AddBarPage />} />
           <Route path='/bar/:id' element={<BarPage />} />
           <Route path='/bar/:id/edit' element={<EditBarPage />} />
-          <Route path='/reservations/add' element={<AddReservationPage />} />
+          <Route path='/reservations/add/:barName' element={<AddReservationPage />} />
+          <Route path='/admin' element={<AdminPage />} />
 
           <Route path='/404' element={<Error404 />} />
         </Routes>

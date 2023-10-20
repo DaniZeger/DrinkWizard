@@ -1,6 +1,10 @@
 const mongoose = require('mongoose')
 
 const ReservationSchema = new mongoose.Schema({
+    barName: {
+        type: String,
+        require: true
+    },
     fullName: {
         type: String,
         require: true

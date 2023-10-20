@@ -1,11 +1,13 @@
 import axios from "axios"
 import { USER } from "../types/UserType"
-import { postData } from "./api"
+import { getAll, postData } from "./api"
 import { URL, contentType } from "./apiHeaders"
 
 const endpoint = 'users'
 
 export const userApi = {
+    getUsers: () => getAll<USER>(endpoint),
+
     logIn: (user: USER) => postData<USER>(user, `${endpoint}/log-in`),
 
     signUp: async (user: USER): Promise<USER> => {

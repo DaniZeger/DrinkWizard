@@ -9,10 +9,11 @@ interface EditDataButtonsProps {
     target: string,
     data: string
     onDelete: (id: string) => void,
-    id?: string
+    id?: string,
+    isAdminPage?: boolean
 }
 
-function EditDataButtons({ target, data, onDelete, id }: EditDataButtonsProps) {
+function EditDataButtons({ target, data, onDelete, id, isAdminPage }: EditDataButtonsProps) {
     const [openAlert, setOpenAlert] = useState(false)
     const context = useContext(userContext)
     const navigation = useNavigate()
@@ -36,7 +37,7 @@ function EditDataButtons({ target, data, onDelete, id }: EditDataButtonsProps) {
             {
                 context?.user?.isAdmin &&
                 <>
-                    <div className="edit-data-buttons">
+                    <div className={`edit-data-buttons${isAdminPage ? '--admin' : ''}`}>
                         <Tooltip
                             arrow
                             title={`Edit ${data}`}

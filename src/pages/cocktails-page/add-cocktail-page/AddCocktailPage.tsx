@@ -119,7 +119,7 @@ function AddCocktailPage() {
     return (
         <>
             <MainHeader
-                title="Add Cocktail."
+                title="Add Cocktail"
                 background={headerProps}
             />
 

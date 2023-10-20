@@ -28,7 +28,7 @@ function CocktailsPage() {
     return (
         <>
             <MainHeader
-                title="Cocktails."
+                title="Cocktails"
                 background={headerProps}
             />
             <AddDataButton target="cocktails" action="Add Cocktail" />

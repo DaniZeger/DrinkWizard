@@ -104,7 +104,7 @@ function BarPage() {
                         </p>
                     }
                     <button
-                        onClick={() => navigation('/reservations/add')}
+                        onClick={() => navigation(`/reservations/add/${bar?.barName}`)}
                         className="btn custom-button-fill"
                     >
                         Book a Table Now <i className="bi bi-caret-right-fill"></i>

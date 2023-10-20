@@ -134,7 +134,7 @@ function AddBarPage() {
     return (
         <>
             <MainHeader
-                title="Add Bar."
+                title="Add Bar"
                 background={headerProps}
             />
 

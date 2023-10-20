@@ -4,6 +4,10 @@
     background: $black;
     height: 82vh;
 
+    @media screen and (min-height: 800px) {
+        height: 87vh;
+    }
+
     &__header {
         color: $title-light;
         font-family: 'Pridi', serif;

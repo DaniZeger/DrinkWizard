@@ -142,7 +142,7 @@ function EditCocktailPage() {
     return (
         <>
             <MainHeader
-                title="Add Cocktail."
+                title="Add Cocktail"
                 background={headerProps}
             />
 

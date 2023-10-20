@@ -5,4 +5,11 @@
     display: flex;
     justify-content: flex-end;
     padding-right: 2%;
+
+    &--admin {
+        background: none;
+        display: flex;
+        justify-content: flex-end;
+        padding-right: 2%;
+    }
 }

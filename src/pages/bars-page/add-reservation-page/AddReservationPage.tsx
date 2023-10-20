@@ -1,5 +1,5 @@
 import { useContext, useState, useEffect } from "react"
-import { useNavigate } from "react-router-dom"
+import { useNavigate, useParams } from "react-router-dom"
 import { toast } from "react-toastify"
 import { userContext } from "../../../App"
 import CountryCodeSelect from "../../../components/forms/country-code-select/CountryCodeSelcet"
@@ -22,6 +22,7 @@ const headerProps = {
 }
 
 function AddReservationPage() {
+    const { barName } = useParams()
     const navigation = useNavigate()
     const user = useContext(userContext)
     const areaList = ["Doesn't Matter", "Bar", "Outside", "Inside"]
@@ -61,6 +62,7 @@ function AddReservationPage() {
     }, [])
 
     const newReservation: RESERVATION = {
+        barName: barName as string,
         fullName: fullName,
         country_code: countryCode,
         phone: phone,
@@ -125,7 +127,7 @@ function AddReservationPage() {
     return (
         <>
             <MainHeader
-                title="Book a Table."
+                title="Book a Table"
                 background={headerProps}
             />
             <section className="add-reservation">

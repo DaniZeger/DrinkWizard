@@ -16,6 +16,7 @@ module.exports = {
     addOne: async function (req, res, next) {
         try {
             const schema = joi.object({
+                barName: joi.string().required(),
                 fullName: joi.string().required(),
                 country_code: joi.string().required(),
                 phone: joi.string().required(),
@@ -38,6 +39,7 @@ module.exports = {
             await ReservationModel.createIndexes({ "deleteAt": 1 }, { expireAfterSeconds: 0 })
 
             const newReservation = new ReservationModel({
+                barName: value.barName,
                 fullName: value.fullName,
                 country_code: value.country_code,
                 phone: value.phone,

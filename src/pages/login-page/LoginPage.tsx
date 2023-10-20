@@ -51,7 +51,7 @@ function LoginPage() {
                 toast.success(`Welcome back ${json.firstName} ${json.lastName}`, {
                     onClose: () => {
                         setTimeout(() => {
-                            navigation('/')
+                            navigation(json.isAdmin ? '/admin' : '/')
                         }, 3000)
                     }
                 })

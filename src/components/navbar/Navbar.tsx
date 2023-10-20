@@ -122,6 +122,18 @@ function Navbar() {
                                     </NavLink>
                                 </Typography>
                             </MenuItem>
+                            {
+                                user.user?.isAdmin &&
+                                <MenuItem sx={{ paddingBottom: 0, background: 'black' }} onClick={handleCloseNavMenu}>
+                                    <Typography textAlign="center">
+                                        <NavLink
+                                            className="navbar__nav-link"
+                                            to='/admin'>
+                                            Admin
+                                        </NavLink>
+                                    </Typography>
+                                </MenuItem>
+                            }
                         </Menu>
                     </Box>
 
@@ -185,6 +197,19 @@ function Navbar() {
                                 </NavLink>
                             </Typography>
                         </MenuItem>
+
+                        {
+                            user.user?.isAdmin &&
+                            <MenuItem sx={{ marginTop: '20px', paddingBottom: 0 }} onClick={handleCloseNavMenu}>
+                                <Typography textAlign="center">
+                                    <NavLink
+                                        className="navbar__nav-link"
+                                        to='/admin'>
+                                        Admin
+                                    </NavLink>
+                                </Typography>
+                            </MenuItem>
+                        }
                     </Box>
 
                     <Box sx={{ flexGrow: 0 }}>

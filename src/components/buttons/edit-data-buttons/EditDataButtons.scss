@@ -7,6 +7,10 @@
     position: absolute;
     right: 11vw;
     top: 12vh;
+
+    &--admin {
+        position: unset;
+    }
 }
 
 .custom-button-fill {

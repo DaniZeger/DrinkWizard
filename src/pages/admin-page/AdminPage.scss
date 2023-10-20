@@ -1,0 +1,29 @@
+@import '../../styles/colors';
+
+.admin-page {
+    background: black;
+    padding: 1rem 3rem 3rem 3rem;
+
+    &__container {
+        width: 75%;
+        margin: auto;
+    }
+
+    &__header {
+        display: flex;
+        color: $title-dark;
+        font-weight: bold;
+        font-size: 20px;
+        list-style: none;
+        background-color: $title-light;
+        padding: 0.5rem 1rem;
+        margin: 0;
+    }
+
+
+    &__accordion {
+        color: $white;
+        font-size: 20px;
+        border: 1px solid $title-light;
+    }
+}

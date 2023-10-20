@@ -29,7 +29,7 @@ function BlogPage() {
         <>
             <MainHeader
                 background={headerProps}
-                title='Blog.'
+                title='Blog'
             />
             <AddDataButton target="blog" action="Add Post" />
             <section className='blog-page'>

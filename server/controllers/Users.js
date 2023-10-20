@@ -6,6 +6,17 @@ const config = require('../config/dev')
 
 module.exports = {
 
+    getAll: async function (req, res, next) {
+        try {
+            const result = await UserModel.find({})
+            res.json(result);
+        }
+        catch (err) {
+            console.log(err);
+            res.status(400).json({ error: 'error getting users' });
+        }
+    },
+
     login: async function (req, res, next) {
 
         const schema = joi.object({

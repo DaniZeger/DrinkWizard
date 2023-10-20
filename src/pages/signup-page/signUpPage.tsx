@@ -101,7 +101,7 @@ function SignUpPage() {
         <>
             <MainHeader
                 background={headerProps}
-                title="Sign Up."
+                title="Sign Up"
             />
             <section className="sign-up">
                 <form

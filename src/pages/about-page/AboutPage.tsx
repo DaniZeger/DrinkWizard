@@ -22,7 +22,7 @@ function AboutPage() {
         <>
             <MainHeader
                 background={headerProps}
-                title="About Us." />
+                title="About Us" />
             <div className="about-page">
                 <div
                     style={{ flexDirection: width > 700 ? 'row' : 'column-reverse' }}
