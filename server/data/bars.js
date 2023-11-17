@@ -11,12 +11,12 @@ const BARS = [
         mainImageAlt: "Bar's entress",
         gallery: [
             {
-                imageUrl: "https://tipamara.evhost.co.il/wp-content/uploads/2021/12/DSC07191-scaled.jpeg",
-                imageAlt: "Food"
+                imageUrl: "https://img.haarets.co.il/bs/0000017f-e721-da9b-a1ff-ef6f59d40000/d8/3c/55e486c897bfb2cccc2b7b660d1f/3388447378.jpg?precrop=1633,1632,x0,y18",
+                imageAlt: "Tipa mara bar"
             },
             {
-                imageUrl: "https://tipamara.evhost.co.il/wp-content/uploads/2020/06/DSC07377-scaled.jpeg",
-                imageAlt: "Martini"
+                imageUrl: "https://i.ytimg.com/vi/e5uR85yi1mc/maxresdefault.jpg",
+                imageAlt: "Tipa mara bar"
             }
         ],
         rating: [
