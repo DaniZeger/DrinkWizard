@@ -1,6 +1,6 @@
 # Welcome to Drink Wizard
 
-## Table of Contents
+## To make things shorter:
 
 - [Installation](#installation)
 - [Usage](#usage)
